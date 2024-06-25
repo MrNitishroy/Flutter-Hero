@@ -16,13 +16,13 @@ class MyDrawer extends StatelessWidget {
     return Consumer<DrawerProvider>(builder: (context, value, child) {
       return Drawer(
         width: 200,
-        child: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                  child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Column(
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Expanded(
+                child: SingleChildScrollView(
+                    child: Column(
                   children: [
                     SizedBox(height: 20),
                     Container(
@@ -63,18 +63,113 @@ class MyDrawer extends StatelessWidget {
                     ),
                     SizedBox(height: 10),
                     MyDrawerMenu(
-                      title: "Dashboard",
-                      icon: IconsAssets.addIcon,
+                      title: "Home",
+                      icon: IconsAssets.home,
                       onPress: () {
                         drawerProvider.seletedMenu(0);
                       },
                       isSeleted: drawerProvider.selectedPageIndex == 0,
                     ),
+                    MyDrawerMenu(
+                      title: "Buttons",
+                      icon: IconsAssets.addIcon,
+                      onPress: () {
+                        drawerProvider.seletedMenu(1);
+                      },
+                      isSeleted: drawerProvider.selectedPageIndex == 1,
+                    ),
+                    MyDrawerMenu(
+                      title: "App Bar",
+                      icon: IconsAssets.reward,
+                      onPress: () {
+                        drawerProvider.seletedMenu(2);
+                      },
+                      isSeleted: drawerProvider.selectedPageIndex == 2,
+                    ),
+                  ],
+                )),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Theme.of(context).colorScheme.surface,
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        // color: Theme.of(context).colorScheme.secondaryContainer,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.asset(
+                                IconsAssets.sun,
+                                width: 15,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onPrimaryContainer,
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                "LIGHT",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )),
+                    Expanded(
+                        child: Container(
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Theme.of(context).colorScheme.secondaryContainer,
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SvgPicture.asset(
+                                IconsAssets.moon,
+                                width: 15,
+                                color: Theme.of(context).colorScheme.onSurface,
+                              ),
+                              SizedBox(width: 10),
+                              Text(
+                                "DARK",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color:
+                                      Theme.of(context).colorScheme.onSurface,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )),
                   ],
                 ),
-              )),
-            ),
-          ],
+              )
+            ],
+          ),
         ),
       );
     });
