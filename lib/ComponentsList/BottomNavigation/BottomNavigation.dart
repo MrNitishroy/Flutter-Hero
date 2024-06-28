@@ -5,8 +5,10 @@ import '../../ViewComponents/BottomNavigation/SimpleNagation.dart';
 
 var bottomNavigation = [
   WidgetArea(
-    code1Title: "Material Bottom Nav",
-    code1: simpleBottomNavigationCode,
+    code1Title: "Getx Used For State Management",
+    code1: "get: ^4.6.6",
+    code2Title: "Navigation Code",
+    code2: simpleBottomNavigationCode,
     isBorder: true,
     view: const SizedBox(
       height: 500,
