@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masonry_view/flutter_masonry_view.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutterhero/ComponentsList/BottomNavigation/BottomNavigation.dart';
-import 'package:flutterhero/Config/AssetsPath.dart';
-import 'package:flutterhero/Widgets/PageAppBar.dart';
-import 'package:flutterhero/Widgets/ResponsiveLayout.dart';
+import 'package:flutterhero/ComponentsList/InputField/InputField.dart';
 
-import '../../ComponentsList/AppBar/AppBarList.dart';
+import '../../Config/AssetsPath.dart';
+import '../../Widgets/PageAppBar.dart';
+import '../../Widgets/ResponsiveLayout.dart';
 
-class BottomNavigationPage extends StatelessWidget {
-  const BottomNavigationPage({super.key});
+class InputFieldPage extends StatelessWidget {
+  const InputFieldPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +24,14 @@ class BottomNavigationPage extends StatelessWidget {
     return Column(
       children: [
         PageAppBar(
-          pageName: "Bottom Navigation",
+          pageName: "Input Field",
           contributerNumber: "10",
           contributerImages: contributerList,
-          icon: IconsAssets.bottomNav,
+          icon: IconsAssets.textfield,
         ),
         const SizedBox(height: 20),
         MasonryView(
-          listOfItem: bottomNavigation,
+          listOfItem: inputFiledsArea,
           itemBuilder: (item) => item,
           numberOfColumn: isDesktop ? 2 : 1,
           itemPadding: 4,

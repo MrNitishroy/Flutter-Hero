@@ -27,6 +27,7 @@ class IconsAssets {
   static String route = "${basePath}route.svg";
   static String lock = "${basePath}lock.svg";
   static String code = "${basePath}code.svg";
+  static String textfield = "${basePath}textfield.svg";
 }
 
 class PhotosAssets {

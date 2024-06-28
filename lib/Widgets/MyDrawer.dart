@@ -112,6 +112,24 @@ class MyDrawer extends StatelessWidget {
                           },
                           isSeleted: drawerProvider.selectedPageIndex == 4,
                         ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text(
+                              "INPUT",
+                              style: Theme.of(context).textTheme.labelMedium,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        MyDrawerMenu(
+                          title: "TEXT INPUT",
+                          icon: IconsAssets.textfield,
+                          onPress: () {
+                            drawerProvider.seletedMenu(5);
+                          },
+                          isSeleted: drawerProvider.selectedPageIndex == 5,
+                        ),
                       ],
                     )),
               ),

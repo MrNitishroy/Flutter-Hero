@@ -17,6 +17,7 @@ class SimpleBottomNavigationBar extends StatelessWidget {
     ];
     Rx<int> selectedIndex = 0.obs;
     return Scaffold(
+   
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
           elevation: 0,
