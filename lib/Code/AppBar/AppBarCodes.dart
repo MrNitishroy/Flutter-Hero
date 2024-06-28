@@ -34,7 +34,9 @@ class SimpleAppBar extends StatelessWidget {
 }
 ''';
 
-String tabAppBar = '''class TabAppBar extends StatefulWidget {
+String tabAppBar = '''
+
+class TabAppBar extends StatefulWidget {
   const TabAppBar({super.key});
 
   @override
@@ -46,12 +48,13 @@ class _TabAppBarState extends State<TabAppBar> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 4, vsync: this);
     return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
           title: Text("TAB APP BAR"),
+          centerTitle: true,
           bottom: TabBar(
             labelColor: Colors.white,
-            unselectedLabelColor: Colors.grey,
+            unselectedLabelColor: Colors.grey[400],
             indicatorColor: Theme.of(context).colorScheme.primaryContainer,
             dividerColor: Theme.of(context).colorScheme.background,
             controller: tabController,
@@ -85,9 +88,12 @@ class _TabAppBarState extends State<TabAppBar> with TickerProviderStateMixin {
           ],
         ));
   }
-}''';
+}
+''';
 
 String whatsappAppbar = '''
+import 'package:flutter/material.dart';
+
 class WhatsappAppBar extends StatefulWidget {
   const WhatsappAppBar({super.key});
 
@@ -101,30 +107,18 @@ class _WhatsappAppBarState extends State<WhatsappAppBar>
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 3, vsync: this);
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.background,
-        title:const Text(
-          "WhatsApp",
-          style: TextStyle(color: Theme.of(context).colorScheme.onBackground),
-        ),
+        title: Text("WhatsApp"),
         centerTitle: false,
         bottom: TabBar(
-            labelColor: Theme.of(context).colorScheme.onSecondaryContainer,
-            indicatorWeight: 2,
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicatorColor: Theme.of(context).colorScheme.primaryContainer,
-            unselectedLabelColor: Theme.of(context).colorScheme.onSecondaryContainer,
+            labelStyle: Theme.of(context).textTheme.bodyMedium,
+            unselectedLabelStyle: Theme.of(context).textTheme.labelMedium,
             controller: tabController,
-            tabs:const [
-              Tab(
-                text: "Chats",
-              ),
-              Tab(
-                text: "Status",
-              ),
-              Tab(
-                text: "Calls",
-              ),
+            tabs: const [
+              Tab(text: "Chats"),
+              Tab(text: "Status"),
+              Tab(text: "Calls"),
             ]),
       ),
       body: TabBarView(controller: tabController, children: [
@@ -178,4 +172,5 @@ class _WhatsappAppBarState extends State<WhatsappAppBar>
     );
   }
 }
+
 ''';

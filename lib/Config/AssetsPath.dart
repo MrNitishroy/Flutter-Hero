@@ -17,6 +17,15 @@ class IconsAssets {
   static String notification = "${basePath}notification.svg";
   static String calender = "${basePath}calender.svg";
   static String drawer = "${basePath}drawer.svg";
+  static String bag = "${basePath}bag.svg";
+  static String booksell = "${basePath}booksell.svg";
+  static String bottomNav = "${basePath}bottomNav.svg";
+  static String drawer2 = "${basePath}drawer2.svg";
+  static String flight = "${basePath}flight.svg";
+  static String list = "${basePath}list.svg";
+  static String appbar = "${basePath}appbar.svg";
+  static String route = "${basePath}route.svg";
+  static String lock = "${basePath}lock.svg";
   static String code = "${basePath}code.svg";
 }
 

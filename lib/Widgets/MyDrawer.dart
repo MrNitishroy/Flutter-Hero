@@ -79,7 +79,7 @@ class MyDrawer extends StatelessWidget {
                         ),
                         MyDrawerMenu(
                           title: "App Bar",
-                          icon: IconsAssets.reward,
+                          icon: IconsAssets.appbar,
                           onPress: () {
                             drawerProvider.seletedMenu(2);
                           },
@@ -96,12 +96,21 @@ class MyDrawer extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         MyDrawerMenu(
-                          title: "Bottom",
-                          icon: IconsAssets.reward,
+                          title: "Bottom Nav",
+                          icon: IconsAssets.bottomNav,
                           onPress: () {
                             drawerProvider.seletedMenu(3);
                           },
                           isSeleted: drawerProvider.selectedPageIndex == 3,
+                        ),
+                        SizedBox(height: 10),
+                        MyDrawerMenu(
+                          title: "Page Nav",
+                          icon: IconsAssets.route,
+                          onPress: () {
+                            drawerProvider.seletedMenu(4);
+                          },
+                          isSeleted: drawerProvider.selectedPageIndex == 4,
                         ),
                       ],
                     )),
@@ -119,10 +128,10 @@ class MyDrawer extends StatelessWidget {
                         children: [
                           Expanded(
                               child: InkWell(
-                                    hoverColor: Colors.transparent,
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
                             onTap: () {
                               themeProvider.changeTheme(ThemeMode.light);
                             },
@@ -167,10 +176,10 @@ class MyDrawer extends StatelessWidget {
                           )),
                           Expanded(
                               child: InkWell(
-                                    hoverColor: Colors.transparent,
-                splashColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            focusColor: Colors.transparent,
                             onTap: () {
                               themeProvider.changeTheme(ThemeMode.dark);
                             },

@@ -5,6 +5,7 @@ import 'package:flutterhero/Widgets/ResponsiveLayout.dart';
 import 'package:provider/provider.dart';
 
 import '../../Config/AssetsPath.dart';
+import '../../Config/PageList.dart';
 import '../../Provider/drawerProvider.dart';
 import '../../Widgets/MyDrawer.dart';
 
@@ -74,7 +75,7 @@ class HomePage extends StatelessWidget {
                   padding: EdgeInsets.all(10),
                   child: Consumer<DrawerProvider>(
                     builder: (context, value, child) =>
-                        value.pages[value.selectedPageIndex],
+                        pages[value.selectedPageIndex],
                   ),
                 ),
               ),

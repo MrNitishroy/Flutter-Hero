@@ -15,24 +15,16 @@ class _WhatsappAppBarState extends State<WhatsappAppBar>
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       appBar: AppBar(
-        title: Text(
-          "WhatsApp",
-        ),
+        title: Text("WhatsApp"),
         centerTitle: false,
         bottom: TabBar(
             labelStyle: Theme.of(context).textTheme.bodyMedium,
             unselectedLabelStyle: Theme.of(context).textTheme.labelMedium,
             controller: tabController,
             tabs: const [
-              Tab(
-                text: "Chats",
-              ),
-              Tab(
-                text: "Status",
-              ),
-              Tab(
-                text: "Calls",
-              ),
+              Tab(text: "Chats"),
+              Tab(text: "Status"),
+              Tab(text: "Calls"),
             ]),
       ),
       body: TabBarView(controller: tabController, children: [
