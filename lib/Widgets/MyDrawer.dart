@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutterhero/Provider/ThemeProvider.dart';
 import 'package:flutterhero/Provider/drawerProvider.dart';
 import 'package:flutterhero/Widgets/DrawerMenu.dart';
 import 'package:provider/provider.dart';
@@ -11,6 +12,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final drawerProvider = Provider.of<DrawerProvider>(context, listen: false);
+    final themeProvider = Provider.of<ThemeProvider>(context, listen: false);
     return Consumer<DrawerProvider>(builder: (context, value, child) {
       return Drawer(
         width: 200,
@@ -105,92 +107,107 @@ class MyDrawer extends StatelessWidget {
                     )),
               ),
               Container(
-                padding: EdgeInsets.all(5),
-                height: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).colorScheme.surface,
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          // color: Theme.of(context).colorScheme.secondaryContainer,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SvgPicture.asset(
-                                  IconsAssets.sun,
-                                  width: 15,
-                                  color: Theme.of(context)
-                                      .colorScheme
-                                      .onPrimaryContainer,
-                                ),
-                                SizedBox(width: 10),
-                                Text(
-                                  "LIGHT",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Theme.of(context)
+                  padding: EdgeInsets.all(5),
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Theme.of(context).colorScheme.surface,
+                  ),
+                  child: Consumer<ThemeProvider>(
+                    builder: (context, value, child) {
+                      return Row(
+                        children: [
+                          Expanded(
+                              child: InkWell(
+                            onTap: () {
+                              themeProvider.changeTheme(ThemeMode.light);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: value.themeMode == ThemeMode.light
+                                    ? Theme.of(context)
                                         .colorScheme
-                                        .onPrimaryContainer,
+                                        .secondaryContainer
+                                    : null,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SvgPicture.asset(
+                                        IconsAssets.sun,
+                                        width: 15,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onPrimaryContainer,
+                                      ),
+                                      SizedBox(width: 10),
+                                      Text(
+                                        "LIGHT",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onPrimaryContainer,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ],
-                        ),
-                      ),
-                    )),
-                    Expanded(
-                        child: InkWell(
-                      onTap: () {},
-                      child: Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color:
-                              Theme.of(context).colorScheme.secondaryContainer,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SvgPicture.asset(
-                                  IconsAssets.moon,
-                                  width: 15,
-                                  color:
-                                      Theme.of(context).colorScheme.onSurface,
-                                ),
-                                SizedBox(width: 10),
-                                Text(
-                                  "DARK",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color:
-                                        Theme.of(context).colorScheme.onSurface,
+                          )),
+                          Expanded(
+                              child: InkWell(
+                            onTap: () {
+                              themeProvider.changeTheme(ThemeMode.dark);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: value.themeMode == ThemeMode.light
+                                      ? null
+                                      : Theme.of(context)
+                                          .colorScheme
+                                          .secondaryContainer),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      SvgPicture.asset(
+                                        IconsAssets.moon,
+                                        width: 15,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSurface,
+                                      ),
+                                      SizedBox(width: 10),
+                                      Text(
+                                        "DARK",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSurface,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
-                          ],
-                        ),
-                      ),
-                    )),
-                  ],
-                ),
-              )
+                          )),
+                        ],
+                      );
+                    },
+                  ))
             ],
           ),
         ),

@@ -5,6 +5,8 @@ const backgroundColor = Color(0xffF4F4F4);
 const primaryContainerColor = Color(0xffFFFFFF);
 const onBackgroundColor = Color(0xff333333);
 const onPrimaryContainerColor = Color(0xff8E8E8E);
+const secondryContainer = Color(0xff293751);
+
 
 const darkBgColor = Color(0xff18202f);
 const darkPrimaryColor = Color(0xff019934);

@@ -3,37 +3,60 @@ import 'package:flutterhero/Config/Colors.dart';
 
 var lightTheme = ThemeData(
     brightness: Brightness.light,
+    scaffoldBackgroundColor: backgroundColor,
     colorScheme: const ColorScheme.light(
       surface: backgroundColor,
       primary: primaryColor,
       onSurface: onBackgroundColor,
       primaryContainer: primaryContainerColor,
       onPrimaryContainer: onPrimaryContainerColor,
+      secondaryContainer: secondryContainer,
+    ),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: primaryContainerColor,
+      surfaceTintColor: primaryContainerColor,
+    ),
+    inputDecorationTheme: const InputDecorationTheme(
+      border: InputBorder.none,
+      fillColor: backgroundColor,
+      filled: true,
+      hintStyle: TextStyle(
+        fontFamily: "Poppins",
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: onPrimaryContainerColor,
+      ),
     ),
     textTheme: const TextTheme(
       headlineMedium: TextStyle(
         fontFamily: "Poppins",
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: FontWeight.w500,
         color: onBackgroundColor,
       ),
       headlineSmall: TextStyle(
         fontFamily: "Poppins",
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: FontWeight.w500,
         color: onBackgroundColor,
       ),
       bodyMedium: TextStyle(
         fontFamily: "Poppins",
-        fontSize: 14,
+        fontSize: 15,
         fontWeight: FontWeight.w500,
         color: onBackgroundColor,
       ),
       bodySmall: TextStyle(
         fontFamily: "Poppins",
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: FontWeight.w500,
         color: onBackgroundColor,
+      ),
+      labelLarge: TextStyle(
+        fontFamily: "Poppins",
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        color: onPrimaryContainerColor,
       ),
       labelMedium: TextStyle(
         fontFamily: "Poppins",
