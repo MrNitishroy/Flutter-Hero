@@ -57,6 +57,10 @@ class MyAppBar extends StatelessWidget {
           ),
           SizedBox(width: 20),
           InkWell(
+                hoverColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                focusColor: Colors.transparent,
             onTap: () {},
             child: Container(
               padding: EdgeInsets.all(7),

@@ -3,6 +3,7 @@ class IconsAssets {
   static String addIcon = "${basePath}add.svg";
   static String bookIcon = "${basePath}book.svg";
   static String copyIcon = "${basePath}copy.svg";
+  static String copy2Icon = "${basePath}copy2.svg";
   static String cursorIcon = "${basePath}cursor.svg";
   static String dashboardIcon = "${basePath}dashboard.svg";
   static String home = "${basePath}home.svg";
@@ -16,6 +17,7 @@ class IconsAssets {
   static String notification = "${basePath}notification.svg";
   static String calender = "${basePath}calender.svg";
   static String drawer = "${basePath}drawer.svg";
+  static String code = "${basePath}code.svg";
 }
 
 class PhotosAssets {

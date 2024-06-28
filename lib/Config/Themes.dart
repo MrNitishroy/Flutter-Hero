@@ -16,6 +16,7 @@ var lightTheme = ThemeData(
       backgroundColor: primaryContainerColor,
       surfaceTintColor: primaryContainerColor,
     ),
+
     inputDecorationTheme: const InputDecorationTheme(
       border: InputBorder.none,
       fillColor: backgroundColor,
@@ -69,6 +70,10 @@ var lightTheme = ThemeData(
 var darkTheme = ThemeData(
     brightness: Brightness.dark,
     scaffoldBackgroundColor: darkBgColor,
+    appBarTheme: AppBarTheme(
+       centerTitle: true,
+        backgroundColor: darkPrimaryColor,
+    ),
     colorScheme: const ColorScheme.dark(
       surface: darkBgColor,
       primary: darkPrimaryColor,

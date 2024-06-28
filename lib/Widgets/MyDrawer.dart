@@ -119,6 +119,10 @@ class MyDrawer extends StatelessWidget {
                         children: [
                           Expanded(
                               child: InkWell(
+                                    hoverColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                focusColor: Colors.transparent,
                             onTap: () {
                               themeProvider.changeTheme(ThemeMode.light);
                             },
@@ -163,6 +167,10 @@ class MyDrawer extends StatelessWidget {
                           )),
                           Expanded(
                               child: InkWell(
+                                    hoverColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                focusColor: Colors.transparent,
                             onTap: () {
                               themeProvider.changeTheme(ThemeMode.dark);
                             },

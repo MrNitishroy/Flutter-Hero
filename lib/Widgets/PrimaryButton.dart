@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutterhero/Widgets/HoverEffect.dart';
 
@@ -17,6 +16,10 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+        hoverColor: Colors.transparent,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        focusColor: Colors.transparent,
         onTap: onTap,
         child: HoverEffect(
           builder: (isHover) => AnimatedContainer(
