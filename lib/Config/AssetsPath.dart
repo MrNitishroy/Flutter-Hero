@@ -15,6 +15,7 @@ class IconsAssets {
   static String save = "${basePath}save.svg";
   static String notification = "${basePath}notification.svg";
   static String calender = "${basePath}calender.svg";
+  static String drawer = "${basePath}drawer.svg";
 }
 
 class PhotosAssets {

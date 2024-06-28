@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:flutterhero/Widgets/AppBar.dart';
 import 'package:flutterhero/Widgets/ResponsiveLayout.dart';
 import 'package:provider/provider.dart';
 
+import '../../Config/AssetsPath.dart';
 import '../../Provider/drawerProvider.dart';
 import '../../Widgets/MyDrawer.dart';
 
@@ -11,9 +13,51 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final drawerProvider = Provider.of<DrawerProvider>(context, listen: false);
     final isDesktop = Responsive.isDesktop(context);
     return Scaffold(
+      appBar: isDesktop
+          ? null
+          : AppBar(
+              backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+              leading: Padding(
+                padding: const EdgeInsets.all(13),
+                child: InkWell(
+                  onTap: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: SvgPicture.asset(
+                    IconsAssets.drawer,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    width: 15,
+                  ),
+                ),
+              ),
+              title: Image.asset(
+                PhotosAssets.darkAppIcon,
+                width: 150,
+              ),
+              centerTitle: true,
+              actions: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.search,
+                    size: 20,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications,
+                    size: 20,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  ),
+                ),
+                SizedBox(width: 10),
+              ],
+            ),
+      drawer: MyDrawer(),
       body: SafeArea(
         child: Row(
           children: [
@@ -25,22 +69,14 @@ class HomePage extends StatelessWidget {
               )),
             Expanded(
               flex: 6,
-              child: Column(
-                children: [
-                  // MyAppBar(),
-                  SizedBox(height: 20),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Consumer<DrawerProvider>(
-                          builder: (context, value, child) =>
-                              value.pages[value.selectedPageIndex],
-                        ),
-                      ),
-                    ),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Consumer<DrawerProvider>(
+                    builder: (context, value, child) =>
+                        value.pages[value.selectedPageIndex],
                   ),
-                ],
+                ),
               ),
             ),
           ],
