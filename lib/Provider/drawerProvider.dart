@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DrawerProvider extends ChangeNotifier {
-  int selectedPageIndex = 5;
+  int selectedPageIndex = 0;
 
   void seletedMenu(int index) {
     selectedPageIndex = index;

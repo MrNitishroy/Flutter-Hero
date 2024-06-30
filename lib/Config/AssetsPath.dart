@@ -35,3 +35,11 @@ class PhotosAssets {
   static String darkAppIcon = "${basePath}darkHeaderLogo.png";
   static String lightAppIcon = "${basePath}lightHeaderLogo.png";
 }
+
+class ComponentsAssets {
+  static String basePath = "assets/components/";
+  static String appBar = "${basePath}App Bar.png";
+  static String bottomNav = "${basePath}Bottom Nav.png";
+  static String buttons = "${basePath}button.png";
+  static String progressIndicator = "${basePath}Progracess Indicator.png";
+}

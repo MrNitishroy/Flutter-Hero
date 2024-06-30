@@ -1,13 +1,14 @@
 import 'package:flutterhero/Page/About/AboutUs.dart';
 import 'package:flutterhero/Page/AppBar/AppBarPage.dart';
 import 'package:flutterhero/Page/BottomNavigation/BottomNavigationPage.dart';
+import 'package:flutterhero/Page/HomeData/HomePageData.dart';
 import 'package:flutterhero/ViewComponents/InputFields/InputFields.dart';
 
 import '../Page/InputFiels/InputFieldsPage.dart';
 
 var pages = [
   //* Index = 0 => Home
-  AboutUs(),
+  HomePageData(),
   //* Index = 1 => Buttons
   AboutUs(),
   //* Index = 2 => AppBar

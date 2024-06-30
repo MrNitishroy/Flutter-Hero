@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutterhero/Widgets/AppBar.dart';
 import 'package:flutterhero/Widgets/ResponsiveLayout.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +14,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: _scaffoldKey,
       appBar: isDesktop
           ? null
           : AppBar(
@@ -24,7 +25,8 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(13),
                 child: InkWell(
                   onTap: () {
-                    Scaffold.of(context).openDrawer();
+                    // Scaffold.of(context).openDrawer();
+                    _scaffoldKey.currentState?.openDrawer();
                   },
                   child: SvgPicture.asset(
                     IconsAssets.drawer,

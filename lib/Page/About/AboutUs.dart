@@ -14,7 +14,7 @@ class AboutUs extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
             color: Theme.of(context).colorScheme.primaryContainer,
           ),
-          child: Row(
+          child: const Row(
             children: [],
           ),
         ),

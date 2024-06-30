@@ -67,3 +67,17 @@ var codeAlphaNumericInput = '''TextField(
             hintText: "AlphaNumberic only",
           ),
         ),''';
+var lableInputCode = '''TextFormField(
+          decoration: InputDecoration(
+            labelText: 'Type something',
+            labelStyle: Theme.of(context).textTheme.labelLarge,
+            border: OutlineInputBorder(
+              
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.primaryContainer,
+              ),
+            ),
+          ),
+          onChanged: (String value) {},
+        )''';

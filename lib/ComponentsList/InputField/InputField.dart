@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutterhero/Code/InputField/InputField.dart';
 import 'package:flutterhero/ViewComponents/InputFields/InputWithIcons.dart';
+import 'package:flutterhero/ViewComponents/InputFields/LableTextField.dart';
 import 'package:flutterhero/ViewComponents/InputFields/MobileNumberInput.dart';
 import 'package:flutterhero/ViewComponents/InputFields/OnlyAlfaBetEnter.dart';
 import 'package:flutterhero/ViewComponents/InputFields/OnlyAlfaNumericField.dart';
@@ -56,6 +57,16 @@ var inputFiledsArea = [
       width: 400,
       height: 100,
       child: OnlyAlphaNumericField(),
+    ),
+  ),
+  WidgetArea(
+    code1Title: "Lable Input Field",
+    code1: lableInputCode,
+    isBorder: true,
+    view: const SizedBox(
+      width: 400,
+      height: 100,
+      child: LableTextField(),
     ),
   ),
 ];
