@@ -31,9 +31,9 @@ Designing beautiful and functional user interfaces can be a time-consuming task.
 
 ![App Screenshot](https://devhq.in/wp-content/uploads/2024/06/home.png)
 
-![App Screenshot](https://devhq.in/wp-content/uploads/2024/06/home.png)
+![App Screenshot](https://devhq.in/wp-content/uploads/2024/06/code.png)
 
-![App Screenshot](https://devhq.in/wp-content/uploads/2024/06/home.png)
+![App Screenshot](https://devhq.in/wp-content/uploads/2024/06/app-bar.png)
 
 ## How to Contribute 
 if you want to Contribut you just read this artical How to Contribut [**READ THIS**]()
