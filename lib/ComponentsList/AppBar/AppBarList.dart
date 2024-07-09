@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterhero/ViewComponents/AppBar/LargeAppBar.dart';
 import 'package:flutterhero/ViewComponents/AppBar/WhatsappAppBar.dart';
 import 'package:flutterhero/Widgets/WidgetsArea.dart';
 
@@ -35,6 +36,16 @@ var appBarList = [
       height: 500,
       width: 300,
       child: WhatsappAppBar(),
+    ),
+  ),
+  WidgetArea(
+    code1Title: "Large App Bar",
+    code1: largeAppBarCode,
+    isBorder: true,
+    view: const SizedBox(
+      height: 500,
+      width: 300,
+      child: LargeAppBar(),
     ),
   ),
 ];

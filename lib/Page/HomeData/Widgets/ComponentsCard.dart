@@ -19,12 +19,12 @@ class ComponentsCard extends StatelessWidget {
         color: isHover
             ? Theme.of(context).colorScheme.secondaryContainer
             : Theme.of(context).colorScheme.primaryContainer,
-        height: 300,
+        // height: 300,
         child: Column(
           children: [
             // Wrap the image with a Transform.scale widget
             Transform.scale(
-              scale: isHover ? 1.1 : 1.0, // Adjust the scaling factor as needed
+              scale: isHover ? 1.1 : 1.0,
               child: Image.asset(coverImage),
             ),
             Padding(
